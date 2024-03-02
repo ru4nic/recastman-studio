@@ -1,4 +1,4 @@
-import { texts } from '../../pages/home/content';
+import { texts } from '../../pages/home/texts';
 
 type TextsFooter = {
   [key: string]: {

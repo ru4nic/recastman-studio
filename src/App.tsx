@@ -5,7 +5,7 @@ import store from './store';
 
 import ThemeProvider from '@mui/material/styles/ThemeProvider';
 
-import MainLayout from './layout/main-layout/MainLayout';
+import MainLayout from './layout/router-main-layout/router-main-layout';
 
 import GlobalStyles from './layout/globalstyles';
 import Home from './pages/home';

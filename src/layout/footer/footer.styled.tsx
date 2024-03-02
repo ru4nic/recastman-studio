@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
-import { fontFamily } from '../vars';
-
 import blackBknd from '../../assets/images/blackmamba.webp';
+import theme from '../../theme';
 
 export const Wrapper = styled.div`
   min-height: 25rem;
@@ -34,7 +33,7 @@ export const FixedDiv = styled.div`
 export const TopMenu = styled.div`
   display: flex;
   justify-content: space-between;
-  font-family: ${fontFamily};
+  font-family: ${theme.font.openSans};
   padding: 3rem 0;
   @media (max-width: 600px) {
     flex-direction: column;

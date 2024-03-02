@@ -5,7 +5,7 @@ import blackBknd from '../assets/images/blackmamba.webp';
 
 import overlay from '../assets/images/overlay.png';
 
-import { borderRadius, colorLine, colorText, darkText } from './vars';
+import theme from '../theme';
 
 export const Page = styled.div`
   position: relative;
@@ -19,7 +19,7 @@ export const MainDesc = styled.p`
   text-align: right;
   font-weight: 400;
   padding-top: 1em;
-  border-top: 2px ${colorLine} solid;
+  border-top: 2px ${theme.colors.line} solid;
 `;
 
 export const Section = styled.section<{
@@ -81,11 +81,9 @@ export const HeadContent = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  /* z-index: 1; */
 `;
 export const Heading = styled.header<{ $page?: boolean }>`
   margin: 0 auto 5rem auto;
-  /* max-width: calc(100% - 10rem); */
   position: ${(props) => (props.$page ? 'absolute' : 'static')};
   top: ${(props) => (props.$page ? '50%' : 'unset')};
   left: ${(props) => (props.$page ? '50%' : 'unset')};
@@ -101,7 +99,7 @@ export const SectionTitle = styled.h2<{
 }>`
   font-size: ${(props) =>
     props.$h3 ? '1.8rem' : props.$page ? '1.5rem' : '2.5rem'};
-  color: ${(props) => (props.$dark ? darkText : '#ffffff')};
+  color: ${(props) => (props.$dark ? theme.colors.darkText : '#ffffff')};
   text-align: ${(props) => (props.$page ? 'left' : 'center')};
   font-weight: 700;
   text-transform: ${(props) => (props.$page ? '' : 'uppercase')};
@@ -124,21 +122,20 @@ export const SectionDesc = styled.p<{
   $paragraph?: boolean;
   $list?: boolean;
 }>`
-  color: ${(props) => (props.$dark ? darkText : colorText)};
+  color: ${(props) =>
+    props.$dark ? theme.colors.darkText : theme.colors.primaryText};
   display: ${(props) => props.$list && 'list-item'};
   margin: ${(props) => props.$list && '0.5rem 0'};
   font-weight: 400;
   text-align: ${(props) => (props.$paragraph ? 'unset' : 'center')};
-  /* padding: 0 15%; */
   line-height: 1.7;
   font-size: 1.2em;
   background-color: ${(props) => props.$list && '#ffffff50 '};
-  border-radius: ${(props) => props.$list && borderRadius};
+  border-radius: ${(props) => props.$list && theme.borderRadius};
   border: ${(props) => props.$list && '1px solid #00000020'};
   padding: ${(props) => props.$list && '0.4rem 1.1992rem'};
 
   @media (max-width: 1000px) {
-    /* line-height: 2rem; */
   }
   @media (max-width: 600px) {
     font-size: 1.1em;
@@ -147,7 +144,6 @@ export const SectionDesc = styled.p<{
   }
   @media (max-width: 450px) {
     font-size: 1rem;
-
     text-align: left;
   }
 `;
@@ -167,7 +163,6 @@ export const SectionImageWrapper = styled.div<{
     left: 0;
     background-color: ${(props) =>
       props.$light ? 'rgba(26, 26, 26, 0.93)' : 'rgba(26, 26, 26, 0.97)'};
-
     position: absolute;
     top: 0;
     width: 100%;
@@ -201,14 +196,7 @@ export const SectionImage = styled.img<{
       : props.$recording
       ? 'center 100%'
       : 'center 100%'};
-  /* object-position: center; */
   @media (max-height: 375px) {
     max-height: 100vh;
   }
 `;
-
-/*
-*
-----------------------------------NAV_BOTTOM-----------------------
-*
-*/

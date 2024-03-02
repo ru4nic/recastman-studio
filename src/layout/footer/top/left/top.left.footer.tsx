@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 
 import { Column, TargetLink, Desc } from './top.left.footer.styled';
-import LogoImg from '../../../../components/logo';
+import LogoImg from '../../../../components/logo-img';
 
 import { selectLanguage } from '../../../../redusers/langSlice';
 

@@ -1,5 +1,3 @@
-// import {texts} from '../../pages/home/content'
-
 type TextsNav = {
   [key: string]: {
     firstButton: string;

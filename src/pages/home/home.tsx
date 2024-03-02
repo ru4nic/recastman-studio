@@ -1,96 +1,75 @@
-/*
-Components
-*/
-
-// import {
-//   ReleasesSwiper,
-//   StyledSwiperImage,
-//   Swiper,
-//   SwiperReleaseTitle,
-//   SwiperReleaseTitleDiv,
-//   SwiperSlide,
-//   SwiperWrapper,
-// } from '../../UI/SwiperComponents';
-
-// import Logo from './Logo';
-// import Spotlight from './Spotlight';
-// import { SwiperWrapper } from '../../UI/SwiperComponents';
-import {
-  Section,
-  SectionTitle,
-  SectionDesc,
-  // MainDesc,
-  Container,
-  Heading,
-  Wrapper,
-  Page,
-} from '../../layout/main_styles';
-// import { LogoInner } from './Logo';
-
-// import { releases, walpapers } from './data';
 import { useSelector } from 'react-redux';
-import { texts } from './content';
-import Player from './Player';
-import { RootState } from '../../store/store';
+import { selectLanguage } from '../../redusers/langSlice';
+
+import * as L from '../../layout/main_styles'; // L - layout
+import { ReleasesSwiper, Swiper, SwiperSlide } from './carousel';
+import { LogoWrapp } from './home.styled';
+import { Img, Title, TitleWrapp, Wrapp } from './carousel/carousel.styled';
+import Logo from './logo';
+import Player from './player';
+
+import { releases, walpapers } from './data';
+import { texts } from './texts';
 
 const Home = () => {
-  const language = useSelector((state: RootState) => state.language.value);
+  const language = useSelector(selectLanguage);
+
   return (
-    <Page>
-      {/* <Swiper>
+    <L.Page>
+      <Swiper>
         {walpapers.map((walpaper) => {
           return (
             <SwiperSlide key={walpaper.id}>
-              <StyledSwiperImage $src={walpaper.src} />
+              <Img $src={walpaper.src} />
             </SwiperSlide>
           );
         })}
-        <LogoInner>
+
+        <LogoWrapp>
           <Logo />
-          <MainDesc>{texts[language].mainDesc}</MainDesc>
-        </LogoInner>
-      </Swiper> */}
-      <Section>
-        <Wrapper>
-          <Container>
-            <Heading>
-              <SectionTitle>{texts[language].titleFirst}</SectionTitle>
-              <SectionDesc>{texts[language].description}</SectionDesc>
-            </Heading>
-          </Container>
-          {/* <Container>
-            <Spotlight />
-          </Container> */}
-        </Wrapper>
-      </Section>
-      <Section $releases $filterGray>
-        <Wrapper>
-          <Container>
-            <Heading>
-              <SectionTitle $dark>{texts[language].titleReleases}</SectionTitle>
-            </Heading>
-            {/* <SwiperWrapper>
+          <L.MainDesc>{texts[language].mainDesc}</L.MainDesc>
+        </LogoWrapp>
+      </Swiper>
+      <L.Section>
+        <L.Wrapper>
+          <L.Container>
+            <L.Heading>
+              <L.SectionTitle>{texts[language].titleFirst}</L.SectionTitle>
+              <L.SectionDesc>{texts[language].description}</L.SectionDesc>
+            </L.Heading>
+          </L.Container>
+        </L.Wrapper>
+      </L.Section>
+      <L.Section $releases $filterGray>
+        <L.Wrapper>
+          <L.Container>
+            <L.Heading>
+              <L.SectionTitle $dark>
+                {texts[language].titleReleases}
+              </L.SectionTitle>
+            </L.Heading>
+            <Wrapp>
               <ReleasesSwiper $releases>
                 {releases.map((release) => {
                   const { id, author, release: song, img: src } = release;
                   return (
                     <SwiperSlide key={id}>
-                      <StyledSwiperImage $releases $src={src} />
-                      <SwiperReleaseTitleDiv>
-                        <SwiperReleaseTitle>
+                      <Img $releases $src={src} />
+                      <TitleWrapp>
+                        <Title>
                           {author} - {song}
-                        </SwiperReleaseTitle>
-                      </SwiperReleaseTitleDiv>
+                        </Title>
+                      </TitleWrapp>
                     </SwiperSlide>
                   );
                 })}
               </ReleasesSwiper>
-            </SwiperWrapper> */}
+            </Wrapp>
             <Player />
-          </Container>
-        </Wrapper>
-      </Section>
-    </Page>
+          </L.Container>
+        </L.Wrapper>
+      </L.Section>
+    </L.Page>
   );
 };
 export default Home;

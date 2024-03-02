@@ -1,3 +1,4 @@
+import { MouseEvent, ChangeEvent } from 'react';
 import { useSelector } from 'react-redux';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
@@ -20,9 +21,9 @@ const LeftMenu = styled('div')`
 `;
 
 type BasicMenuProps = {
-  handleMenuOpen: (event: React.MouseEvent<HTMLElement>) => void;
-  handleMenuClose: (event: React.MouseEvent<HTMLElement>) => void;
-  toggleSwitch: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleMenuOpen: (event: MouseEvent<HTMLElement>) => void;
+  handleMenuClose: (event: MouseEvent<HTMLElement>) => void;
+  toggleSwitch: (event: ChangeEvent<HTMLInputElement>) => void;
   open: boolean;
   checked: boolean;
   ruLanguage: boolean;

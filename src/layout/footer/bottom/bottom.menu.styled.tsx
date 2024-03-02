@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { fontFamily } from '../../vars';
+import theme from '../../../theme';
 
 export const Wrapp = styled.div`
   border-top: 1px solid rgba(233, 236, 239, 0.025);
@@ -11,7 +11,7 @@ export const Wrapp = styled.div`
 
 export const Copyrights = styled.div`
   text-align: left;
-  font-family: ${fontFamily};
+  font-family: ${theme.font.openSans};
   color: rgba(227, 227, 227, 0.6);
   font-size: 0.9rem;
 `;
