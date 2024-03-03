@@ -9,7 +9,7 @@ import {
 import { textsFooter } from '../footer.texts';
 import { useSelector } from 'react-redux';
 import { selectLanguage } from '../../../redusers/langSlice';
-import { socialsLinks } from '../footer.data';
+import { links } from '../../../data/links';
 
 const BottomMenu = () => {
   const language = useSelector(selectLanguage);
@@ -21,7 +21,7 @@ const BottomMenu = () => {
         <SimpleLink href="jfds">Ru4nic</SimpleLink>
       </Copyrights>
       <Socials>
-        {socialsLinks.map((link) => {
+        {links.socials.map((link) => {
           return (
             <Item key={link.href}>
               <IconLink href={link.href} target="_blank" rel="norefferer">

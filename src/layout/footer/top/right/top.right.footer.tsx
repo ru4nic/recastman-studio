@@ -3,8 +3,8 @@ import { selectLanguage } from '../../../../redusers/langSlice';
 
 import { Item, List, RightMenu } from './top.right.footer.styled';
 import { SimpleLink } from '../../bottom/bottom.menu.styled';
-import { partnersLinks } from '../../footer.data';
 import { textsFooter } from '../../footer.texts';
+import { links } from '../../../../data/links';
 
 const TopRightFooter = () => {
   const language = useSelector(selectLanguage);
@@ -16,7 +16,7 @@ const TopRightFooter = () => {
       </List>
       <List>
         <Item>{textsFooter[language].partners}</Item>
-        {partnersLinks.map((link) => (
+        {links.partners.map((link) => (
           <SimpleLink $topMenu key={link.href} href={link.href}>
             {link.name}
           </SimpleLink>

@@ -1,17 +1,16 @@
 import { MouseEvent, ChangeEvent } from 'react';
-import {
-  AppBar,
-  Container,
-  IconButton,
-  Menu,
-  MenuItem,
-  Stack,
-  Switch,
-  Toolbar,
-  Typography,
-} from '@mui/material';
+import AppBar from '@mui/material/AppBar';
+import Container from '@mui/material/Container';
+import IconButton from '@mui/material/IconButton';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Stack from '@mui/material/Stack';
+import Switch from '@mui/material/Switch';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { Link } from 'react-router-dom';
+import { links } from '../../../data/links';
 
 interface MobileNavbarProps {
   anchorEl: null | HTMLElement;
@@ -85,7 +84,7 @@ const MobileNavbar = ({
             onClose={handleMenuClose}
             variant="selectedMenu"
           >
-            <MenuItem component={Link} to="/recastman-studio/" dense divider>
+            <MenuItem component={Link} to={links.pages.home} dense divider>
               Home
             </MenuItem>
           </Menu>

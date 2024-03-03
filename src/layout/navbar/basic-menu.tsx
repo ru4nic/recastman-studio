@@ -10,6 +10,7 @@ import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import { textsNav } from './navbar.texts';
 import { RootState } from '../../store/store';
+import { links } from '../../data/links';
 
 const StyledIcon = styled(FaAngleDown)`
   height: 0.6em;
@@ -48,7 +49,7 @@ export default function BasicMenu({
         variant="text"
         size="large"
         component={Link}
-        to="/recastman-studio/"
+        to={links.pages.home}
       >
         {textsNav[language].firstButton}
       </Button>
@@ -63,7 +64,7 @@ export default function BasicMenu({
       <Menu anchorEl={anchorEl} open={open} onClose={handleMenuClose}></Menu>
       <Button
         component={Link}
-        to="/recastman-studio/video-clip"
+        to={links.pages.video}
         variant="text"
         size="large"
       >

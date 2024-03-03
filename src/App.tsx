@@ -9,8 +9,10 @@ import MainLayout from './layout/router-main-layout/router-main-layout';
 
 import GlobalStyles from './layout/globalstyles';
 import Home from './pages/home';
+import VideoClip from './pages/videoclip';
 
 import { muiTheme } from './theme';
+import { links } from './data/links';
 
 function App() {
   const location = useLocation();
@@ -19,8 +21,9 @@ function App() {
       <GlobalStyles />
       <ThemeProvider theme={muiTheme}>
         <Routes key={location.pathname} location={location}>
-          <Route path="/recastman-studio/" element={<MainLayout />}>
+          <Route path={links.pages.home} element={<MainLayout />}>
             <Route index element={<Home />} />
+            <Route path={links.pages.video} element={<VideoClip />} />
           </Route>
         </Routes>
       </ThemeProvider>

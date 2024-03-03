@@ -1,4 +1,6 @@
-import { AppBar, Container, Toolbar } from '@mui/material';
+import AppBar from '@mui/material/AppBar';
+import Container from '@mui/material/Container';
+import Toolbar from '@mui/material/Toolbar';
 import { MouseEvent, ChangeEvent } from 'react';
 import LogoImg from '../../../components/logo-img';
 import BasicMenu from '../basic-menu';
