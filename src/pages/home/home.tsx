@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { selectLanguage } from '../../redusers/langSlice';
 
 import * as L from '../../layout/main_styles'; // L - layout
-import { ReleasesSwiper, Swiper, SwiperSlide } from './carousel';
+import { ReleasesSwiper, Swiper, SwiperSlide } from './carousel/carousel';
 import { LogoWrapp } from './home.styled';
 import { Img, Title, TitleWrapp, Wrapp } from './carousel/carousel.styled';
 import Logo from './logo';
