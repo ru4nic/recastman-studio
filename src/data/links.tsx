@@ -15,6 +15,7 @@ interface Links {
   pages: {
     home: string;
     video: string;
+    mixing: string;
   };
   partners: Partners[];
   socials: Socials[];
@@ -23,6 +24,7 @@ export const links: Links = {
   pages: {
     home: `/${PATH}/`,
     video: `/${PATH}/video-clip`,
+    mixing: `/${PATH}/mixing`,
   },
   partners: [
     {

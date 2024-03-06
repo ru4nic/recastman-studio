@@ -11,6 +11,7 @@ import Stack from '@mui/material/Stack';
 import { textsNav } from './navbar.texts';
 import { RootState } from '../../store/store';
 import { links } from '../../data/links';
+import { MenuItem } from '@mui/material';
 
 const StyledIcon = styled(FaAngleDown)`
   height: 0.6em;
@@ -61,7 +62,15 @@ export default function BasicMenu({
       >
         {textsNav[language].secondButton}
       </Button>
-      <Menu anchorEl={anchorEl} open={open} onClose={handleMenuClose}></Menu>
+      <Menu anchorEl={anchorEl} open={open} onClose={handleMenuClose}>
+        <MenuItem
+          component={Link}
+          to={links.pages.mixing}
+          onClick={handleMenuClose}
+        >
+          {textsNav[language].menu}
+        </MenuItem>
+      </Menu>
       <Button
         component={Link}
         to={links.pages.video}
