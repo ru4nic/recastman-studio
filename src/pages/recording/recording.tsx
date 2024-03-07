@@ -1,57 +1,49 @@
 import {
   Section,
-  Wrapper,
-  Container,
-  Heading,
   SectionTitle,
   SectionDesc,
   SectionImageWrapper,
   SectionImage,
-  HeadContent,
+  Wrapper,
+  Container,
+  Heading,
   Page,
 } from '../../layout/main_styles';
-import mixing from '../../assets/images/mixing_bknd.jpg';
-
-import textsMixing from './mixing.texts';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
-
 import Button from '@mui/material/Button';
 
-const Mixing = () => {
-  const language = useSelector((state: RootState) => state.language.value);
+import recordingImg from '../../assets/images/editing_bknd.jpg';
+
+import { HeadContent } from '../../layout/main_styles';
+import { useSelector } from 'react-redux';
+import textsRecording from './recording.texts';
+import { selectLanguage } from '../../redusers/langSlice';
+
+const Recording = () => {
+  const language = useSelector(selectLanguage);
   return (
     <Page>
       <Section $page>
-        <SectionImageWrapper $light>
-          <SectionImage $mixing src={mixing} alt="editing" />
+        <SectionImageWrapper $recording>
+          <SectionImage $recording src={recordingImg} alt="recording" />
           <HeadContent>
             <Heading $page>
-              <SectionTitle>{textsMixing[language].head}</SectionTitle>
+              <SectionTitle>{textsRecording[language].head}</SectionTitle>
             </Heading>
           </HeadContent>
         </SectionImageWrapper>
         <Wrapper>
           <Container>
             <SectionTitle $page $dark>
-              {textsMixing[language].titleMixing}
+              {textsRecording[language].title}
             </SectionTitle>
-            {textsMixing[language].paragraphMixing.map((text, index) => {
+            {textsRecording[language].paragraph.map((text, index) => {
               return (
                 <SectionDesc key={index} $paragraph $dark>
                   {text}
                 </SectionDesc>
               );
             })}
-
-            <SectionTitle $page $dark>
-              {textsMixing[language].titleMastering}
-            </SectionTitle>
-            <SectionDesc $paragraph $dark>
-              {textsMixing[language].paragraphMastering}
-            </SectionDesc>
             <Button
-              // component="a"
               variant="contained"
               color="secondary"
               href="./rekomendacii_k_ishodnikam_metalstudio.pdf"
@@ -74,4 +66,4 @@ const Mixing = () => {
   );
 };
 
-export default Mixing;
+export default Recording;

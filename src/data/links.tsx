@@ -16,6 +16,10 @@ interface Links {
     home: string;
     video: string;
     mixing: string;
+    recording: string;
+    reamping: string;
+    editing: string;
+    sessionMusicians: string;
   };
   partners: Partners[];
   socials: Socials[];
@@ -25,6 +29,10 @@ export const links: Links = {
     home: `/${PATH}/`,
     video: `/${PATH}/video-clip`,
     mixing: `/${PATH}/mixing`,
+    recording: `/${PATH}/recording`,
+    reamping: `/${PATH}/reamping`,
+    editing: `/${PATH}/editing`,
+    sessionMusicians: `/${PATH}/session-musicians`,
   },
   partners: [
     {

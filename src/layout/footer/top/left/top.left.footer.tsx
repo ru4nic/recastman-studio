@@ -5,7 +5,7 @@ import LogoImg from '../../../../components/logo-img';
 
 import { selectLanguage } from '../../../../redusers/langSlice';
 
-import { textsFooter } from '../../footer.texts';
+import textsFooter from '../../footer.texts';
 
 import logo from '../../../../assets/images/recastman_logo.png';
 

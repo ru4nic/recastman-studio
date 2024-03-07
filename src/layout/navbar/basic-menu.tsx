@@ -1,17 +1,23 @@
 import { MouseEvent, ChangeEvent } from 'react';
+
+import { styled } from '@mui/material/styles';
+
+import { Link } from 'react-router-dom';
+
 import { useSelector } from 'react-redux';
+import { selectLanguage } from '../../redusers/langSlice';
+
+import { FaAngleDown } from 'react-icons/fa6';
+
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
-import { Link } from 'react-router-dom';
-import { FaAngleDown } from 'react-icons/fa6';
-import { styled } from '@mui/material/styles';
 import Switch from '@mui/material/Switch';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
-import { textsNav } from './navbar.texts';
-import { RootState } from '../../store/store';
+import MenuItem from '@mui/material/MenuItem';
+
+import textsNav from './navbar.texts';
 import { links } from '../../data/links';
-import { MenuItem } from '@mui/material';
 
 const StyledIcon = styled(FaAngleDown)`
   height: 0.6em;
@@ -42,7 +48,12 @@ export default function BasicMenu({
   ruLanguage,
   enLanguage,
 }: BasicMenuProps) {
-  const language = useSelector((state: RootState) => state.language.value);
+  const language = useSelector(selectLanguage);
+
+  const { mixing, recording, reamping, editing, sessionMusicians } =
+    links.pages;
+
+  const soundPages = [mixing, recording, reamping, editing, sessionMusicians];
 
   return (
     <LeftMenu>
@@ -63,13 +74,18 @@ export default function BasicMenu({
         {textsNav[language].secondButton}
       </Button>
       <Menu anchorEl={anchorEl} open={open} onClose={handleMenuClose}>
-        <MenuItem
-          component={Link}
-          to={links.pages.mixing}
-          onClick={handleMenuClose}
-        >
-          {textsNav[language].menu}
-        </MenuItem>
+        {soundPages.map((page, idx) => {
+          return (
+            <MenuItem
+              key={idx}
+              component={Link}
+              to={page}
+              onClick={handleMenuClose}
+            >
+              {textsNav[language].menu[idx]}
+            </MenuItem>
+          );
+        })}
       </Menu>
       <Button
         component={Link}

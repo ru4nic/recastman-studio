@@ -1,4 +1,4 @@
-type Texts = {
+type TextsHome = {
   [key: string]: {
     mainDesc: string;
     description: string;
@@ -6,7 +6,7 @@ type Texts = {
     titleFirst: string;
   };
 };
-export const texts: Texts = {
+const textsHome: TextsHome = {
   en: {
     titleFirst: 'Recording Studio in Moscow',
     mainDesc: 'Recording and video production studio',
@@ -22,3 +22,5 @@ export const texts: Texts = {
     titleReleases: 'Релизы',
   },
 };
+
+export default textsHome;

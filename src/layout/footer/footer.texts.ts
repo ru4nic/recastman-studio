@@ -1,4 +1,4 @@
-import { texts } from '../../pages/home/texts';
+import textsHome from '../../pages/home/home.texts';
 
 type TextsFooter = {
   [key: string]: {
@@ -8,17 +8,19 @@ type TextsFooter = {
     copyright: string;
   };
 };
-export const textsFooter: TextsFooter = {
+const textsFooter: TextsFooter = {
   en: {
-    description: texts.en.mainDesc,
+    description: textsHome.en.mainDesc,
     services: 'Services',
     partners: 'Partners',
     copyright: 'Developed & designed by ',
   },
   ru: {
-    description: texts.ru.mainDesc,
+    description: textsHome.ru.mainDesc,
     services: 'Услуги',
     partners: 'Партнеры',
     copyright: 'Разработка и дизайн ',
   },
 };
+
+export default textsFooter;

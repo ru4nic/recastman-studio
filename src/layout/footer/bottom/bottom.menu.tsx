@@ -6,7 +6,7 @@ import {
   Socials,
   Wrapp,
 } from './bottom.menu.styled';
-import { textsFooter } from '../footer.texts';
+import textsFooter from '../footer.texts';
 import { useSelector } from 'react-redux';
 import { selectLanguage } from '../../../redusers/langSlice';
 import { links } from '../../../data/links';

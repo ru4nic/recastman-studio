@@ -3,7 +3,7 @@ import { selectLanguage } from '../../../../redusers/langSlice';
 
 import { Item, List, RightMenu } from './top.right.footer.styled';
 import { SimpleLink } from '../../bottom/bottom.menu.styled';
-import { textsFooter } from '../../footer.texts';
+import textsFooter from '../../footer.texts';
 import { links } from '../../../../data/links';
 
 const TopRightFooter = () => {

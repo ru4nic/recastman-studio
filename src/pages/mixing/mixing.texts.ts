@@ -1,4 +1,4 @@
-type Texts = {
+type TextsMixing = {
   [key: string]: {
     head: string;
     titleMixing: string;
@@ -7,7 +7,7 @@ type Texts = {
     paragraphMastering: string;
   };
 };
-export const texts: Texts = {
+const textsMixing: TextsMixing = {
   en: {
     head: 'Mixing and Mastering',
     titleMixing: 'Mixing',
@@ -31,3 +31,5 @@ export const texts: Texts = {
       'Это последняя стадия обработки сведённого материала. Мастеринг позволит Вашей композиции звучать качественно и профессионально.',
   },
 };
+
+export default textsMixing;

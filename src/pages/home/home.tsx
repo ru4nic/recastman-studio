@@ -9,7 +9,7 @@ import Logo from './logo';
 import Player from './player';
 
 import { releases, walpapers } from './data';
-import { texts } from './texts';
+import textsHome from './home.texts';
 
 const Home = () => {
   const language = useSelector(selectLanguage);
@@ -27,15 +27,15 @@ const Home = () => {
 
         <LogoWrapp>
           <Logo />
-          <L.MainDesc>{texts[language].mainDesc}</L.MainDesc>
+          <L.MainDesc>{textsHome[language].mainDesc}</L.MainDesc>
         </LogoWrapp>
       </Swiper>
       <L.Section>
         <L.Wrapper>
           <L.Container>
             <L.Heading>
-              <L.SectionTitle>{texts[language].titleFirst}</L.SectionTitle>
-              <L.SectionDesc>{texts[language].description}</L.SectionDesc>
+              <L.SectionTitle>{textsHome[language].titleFirst}</L.SectionTitle>
+              <L.SectionDesc>{textsHome[language].description}</L.SectionDesc>
             </L.Heading>
           </L.Container>
         </L.Wrapper>
@@ -45,7 +45,7 @@ const Home = () => {
           <L.Container>
             <L.Heading>
               <L.SectionTitle $dark>
-                {texts[language].titleReleases}
+                {textsHome[language].titleReleases}
               </L.SectionTitle>
             </L.Heading>
             <Wrapp>

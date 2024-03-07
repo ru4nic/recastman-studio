@@ -7,7 +7,7 @@ import Videos from './videos';
 
 import video from '../../assets/images/video_bknd.jpg';
 
-import { texts } from './texts';
+import textsVideoclip from './videoclip.texts';
 
 const VideoClip = () => {
   const language = useSelector(selectLanguage);
@@ -17,21 +17,21 @@ const VideoClip = () => {
       <L.Section $page>
         <L.SectionImageWrapper>
           <L.Heading $page>
-            <L.SectionTitle>{texts[language].head}</L.SectionTitle>
+            <L.SectionTitle>{textsVideoclip[language].head}</L.SectionTitle>
           </L.Heading>
           <L.SectionImage src={video} alt="video" />
         </L.SectionImageWrapper>
         <L.Wrapper>
           <L.Container>
             <L.SectionTitle $dark $page>
-              {texts[language].title}
+              {textsVideoclip[language].title}
             </L.SectionTitle>
 
             <L.SectionDesc $paragraph $dark>
-              {texts[language].paragraph}
+              {textsVideoclip[language].paragraph}
             </L.SectionDesc>
             <L.SectionTitle $page $dark $h3>
-              {texts[language].portfolio}
+              {textsVideoclip[language].portfolio}
             </L.SectionTitle>
             <Videos />
           </L.Container>

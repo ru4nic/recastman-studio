@@ -15,6 +15,10 @@ import Mixing from './pages/mixing';
 
 import { muiTheme } from './theme';
 import { links } from './data/links';
+import Recording from './pages/recording';
+import Reamping from './pages/reamping';
+import Editing from './pages/editing';
+import SessionMusicians from './pages/session-musicians';
 
 function App() {
   const location = useLocation();
@@ -27,6 +31,13 @@ function App() {
             <Route index element={<Home />} />
             <Route path={links.pages.video} element={<VideoClip />} />
             <Route path={links.pages.mixing} element={<Mixing />} />
+            <Route path={links.pages.recording} element={<Recording />} />
+            <Route path={links.pages.reamping} element={<Reamping />} />
+            <Route path={links.pages.editing} element={<Editing />} />
+            <Route
+              path={links.pages.sessionMusicians}
+              element={<SessionMusicians />}
+            />
           </Route>
         </Routes>
       </ThemeProvider>
